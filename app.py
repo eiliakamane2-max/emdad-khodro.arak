@@ -38,7 +38,7 @@ def home():
             .mobile-menu a:hover { background-color: #009688; }
 
             /* بخش هیرو */
-            .hero { background: linear-gradient(rgba(0, 150, 136, 0.8), rgba(0, 0, 0, 0.7)), url('/static/1.jpg') center/cover; color: white; text-align: center; padding: 140px 20px; border-bottom: 5px solid #ffeb3b; }
+            .hero { background: linear-gradient(rgba(0, 150, 136, 0.8), rgba(0, 0, 0, 0.7)), url('/1.jpg') center/cover; color: white; text-align: center; padding: 140px 20px; border-bottom: 5px solid #ffeb3b; }
             .hero h2 { font-family: 'B Nazanin', 'Tahoma', Arial, sans-serif; font-size: 55px; font-weight: bold; margin-bottom: 20px; color: #fff; text-shadow: 2px 2px 5px rgba(0,0,0,0.7); }
             .hero p { font-size: 20px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); line-height: 1.8; }
             .btn-call { background-color: #ffeb3b; color: #1a1a2e; padding: 18px 45px; font-size: 22px; font-weight: bold; border-radius: 50px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 235, 59, 0.4); }
@@ -161,6 +161,7 @@ def home():
                 <a href="#contact">درخواست امداد</a>
             </div>
         </header>
+
         <!-- معرفی -->
         <section class="hero hidden">
             <h2>خودروبر و امداد خودرو ۲۴ ساعته در اراک</h2>
@@ -173,19 +174,19 @@ def home():
             <h2>خدمات ما</h2>
             <div class="service-cards">
                 <div class="card">
-                    <img src="/static/1.jpg" alt="خودروبر کفی">
+                    <img src="/1.jpg" alt="خودروبر کفی">
                     <div class="card-content"><h3>خودروبر (کفی)</h3><p>کف خودروبر به صورت هیدرولیکی پایین آمده و خودرو با امنیت کامل روی آن قرار می‌گیرد.</p></div>
                 </div>
                 <div class="card">
-                    <img src="/static/2.jpg" alt="یدک کش و جرثقیل">
+                    <img src="/2.jpg" alt="یدک کش و جرثقیل">
                     <div class="card-content"><h3>یدک‌کش و جرثقیل</h3><p>انتقال خودروهای سبک و سنگین. در صورت نیاز، خودرو با وینچ به صورت ایمن بارگیری می‌شود.</p></div>
                 </div>
                 <div class="card">
-                    <img src="/static/3.jpg" alt="امداد در محل">
+                    <img src="/3.jpg" alt="امداد در محل">
                     <div class="card-content"><h3>امداد در محل</h3><p>اگر خودروی شما در جایی گیر کرده، تیم ما در محل حاضر شده و خودرو را خارج می‌کند.</p></div>
                 </div>
                 <div class="card">
-                    <img src="/static/8.jpg" alt="خودرو سوار">
+                    <img src="/8.jpg" alt="خودرو سوار">
                     <div class="card-content"><h3>خودرو سوار</h3><p>سرویس حمل خودروهای سواری و لوکس با خودرو سوار (کفی) به صورت کاملاً ایمن و تخصصی.</p></div>
                 </div>
             </div>
@@ -208,11 +209,11 @@ def home():
         <section class="gallery hidden" id="gallery">
             <h2>تصاویری از کارهای ما</h2>
             <div class="gallery-container" id="gallery-container">
-                <img src="/static/4.jpg" alt="کار 4">
-                <img src="/static/5.jpg" alt="کار 5">
-                <img src="/static/6.jpg" alt="کار 6">
-                <img src="/static/7.jpg" alt="کار 7">
-                <img src="/static/8.jpg" alt="کار 8">
+                <img src="/4.jpg" alt="کار 4">
+                <img src="/5.jpg" alt="کار 5">
+                <img src="/6.jpg" alt="کار 6">
+                <img src="/7.jpg" alt="کار 7">
+                <img src="/8.jpg" alt="کار 8">
             </div>
         </section>
 
@@ -226,7 +227,7 @@ def home():
             <div class="faq-item">
                 <button class="faq-question">هزینه حمل خودرو چگونه محاسبه می‌شود؟</button>
                 <div class="faq-answer">هزینه بر اساس مسافت، نوع خودرو و شرایط جاده محاسبه می‌شود. برای قیمت دقیق با ما تماس بگیرید.</div>
-                </div>
+            </div>
             <div class="faq-item">
                 <button class="faq-question">چه مدت طول می‌کشد تا خودروبر برسد؟</button>
                 <div class="faq-answer">زمان رسیدن بستگی به ترافیک و موقعیت مکانی شما دارد، اما تیم ما معمولاً در کوتاه‌ترین زمان ممکن (بین ۱۵ تا ۳۰ دقیقه در سطح شهر) در محل حاضر می‌شود.</div>
@@ -373,4 +374,6 @@ def handle_form():
     """
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
